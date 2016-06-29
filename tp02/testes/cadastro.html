@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Como criar tabelas com PHP</title>
+</head>
+    <body>
+        <?php
+            
+            $dbhost = 'localhost'; // endereco do servidor de banco de dados
+            $dbuser = 'sispetshop'; // login do banco de dados
+            $dbpass = '123456'; // senha
+            $dbname = 'petshop'; // nome do banco de dados a ser usado
+            
+            $conecta = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+             if(! $conecta )
+            {
+              die("Nao foi possivel conectar: ");
+            }
+            echo "<br />Conexao realizada!";
+        
+            $id = "1";
+            $nome = "Helton ";
+            $login = "helton";
+            $senha = "123456";
+            $tipo = "1";
+        
+            $sqlinsert = "INSERT INTO usuarios (nome, login, senha, tipo) VALUES ('$id','$nome', '$login', '$senha', '$tipo')";
+            $conecta->query($sqlinsert);
+           // $inserenome = mysql_query( $sqlinsert, $conecta );
+            // inicia a conexao ao servidor de banco de dados
+           
+
+            // seleciona o banco de dados no qual a tabela vai ser criada
+            if (! $seleciona)
+            {
+              die("<br />Nao foi possivel selecionar o banco de dados $dbname");
+            }
+            echo "<br />selecionado o banco de dados $dbname";
+
+            // finalmente, cria a tabela 
+            if(! $inserenome )
+            {
+              die("<br />Nao foi possivel inserir registro: ");
+            }
+            echo "<br />Um novo registro foi feito!";
+            // encerra a conexão
+            mysql_close($conecta);
+        ?>
+    </body>
+</html>
