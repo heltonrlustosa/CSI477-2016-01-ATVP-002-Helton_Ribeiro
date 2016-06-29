@@ -23,8 +23,12 @@
 				}
 			}
 
-			//verifica login
-			if(isset($_GET['acao']) == 'logar'){
+			
+
+		}
+	
+		//verifica login
+			if(isset($_GET['acao2']) == 'logar'){
 
 				if(!isset($_SESSION['cliente'])){
 		
@@ -32,10 +36,6 @@
 				}
 
 			}
-
-		}
-	
-	
 	
 	//print_r($_SESSION['carrinho']);
 ?>
@@ -85,7 +85,7 @@
     <ul id="topMenu" class="nav pull-right">
 	
 	 <li class="">
-	 <a href="index.php?acao=logar" role="button"  style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
+	 <a href="index.php?acao2=logar" role="button"  style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
 	
 	</li>
     </ul>
